@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>نظام إدارة العقود والمناقصات</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="dashboard-container">
+      <aside class="sidebar">
+        <div class="logo">
+          <i class="fas fa-file-contract"></i>
+          <span>عقود برو</span>
+        </div>
+        <nav>
+          <ul>
+            <li class="active"><i class="fas fa-home"></i> الرئيسية</li>
+            <li><i class="fas fa-gavel"></i> المناقصات</li>
+            <li><i class="fas fa-handshake"></i> العقود</li>
+            <li><i class="fas fa-users"></i> الموردين</li>
+            <li><i class="fas fa-chart-line"></i> التقارير</li>
+            <li><i class="fas fa-cog"></i> الإعدادات</li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="top-bar">
+          <div class="search-box">
+            <input type="text" placeholder="بحث عن مناقصة أو عقد..." />
+          </div>
+          <div class="user-profile">
+            <span>أهلاً، أحمد حامد</span>
+            <i class="fas fa-user-circle"></i>
+          </div>
+        </header>
+
+        <section class="stats-cards">
+          <div class="card">
+            <div class="card-info">
+              <h3>المناقصات الجارية</h3>
+              <p class="count">15</p>
+            </div>
+            <i class="fas fa-briefcase icon-blue"></i>
+          </div>
+          <div class="card">
+            <div class="card-info">
+              <h3>العقود الموقعة</h3>
+              <p class="count">42</p>
+            </div>
+            <i class="fas fa-check-double icon-green"></i>
+          </div>
+          <div class="card">
+            <div class="card-info">
+              <h3>القيمة الإجمالية</h3>
+              <p class="count">2.5M $</p>
+            </div>
+            <i class="fas fa-dollar-sign icon-gold"></i>
+          </div>
+        </section>
+
+        <section class="recent-projects">
+          <h2>أحدث المناقصات المضافة</h2>
+          <button class="add-btn" onclick="openForm()">
+            + إضافة مناقصة جديدة
+          </button>
+          <table>
+            <thead>
+              <tr>
+                <th>كود المشروع</th>
+                <th>اسم المناقصة</th>
+                <th>جهة التعاقد</th>
+                <th>تاريخ الإغلاق</th>
+                <th>الحالة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#1024</td>
+                <td>تطوير البنية التحتية - المرحلة أ</td>
+                <td>وزارة الإسكان</td>
+                <td>2026-03-01</td>
+                <td><span class="status open">نشطة</span></td>
+              </tr>
+              <tr>
+                <td>#1025</td>
+                <td>توريد أجهزة حاسب آلي</td>
+                <td>شركة الرواد</td>
+                <td>2026-02-25</td>
+                <td><span class="status pending">قيد المراجعة</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+    <div id="tenderModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeForm()">&times;</span>
+        <h2>إضافة مناقصة جديدة</h2>
+        <form id="tenderForm">
+          <input type="text" id="projName" placeholder="اسم المشروع" required />
+          <input
+            type="text"
+            id="clientName"
+            placeholder="جهة التعاقد"
+            required
+          />
+          <input type="date" id="closeDate" required />
+          <input
+            type="number"
+            id="projValue"
+            placeholder="القيمة التقديرية"
+            required
+          />
+          <button type="submit" class="save-btn">حفظ المناقصة</button>
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
